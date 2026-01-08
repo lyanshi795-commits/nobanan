@@ -52,8 +52,14 @@ export function ImageEditor() {
 
       const data = await response.json()
 
-      // Gemini 2.5 Flash Image 返回文本分析，不是图片
-      if (data.analysis) {
+      // 处理 Nano Banana Pro 返回的图片和文本
+      if (data.images && data.images.length > 0) {
+        // 如果有生成的图片，显示第一张
+        setGeneratedImage(data.images[0].url)
+        if (data.analysis) {
+          setAnalysisResult(data.analysis)
+        }
+      } else if (data.analysis) {
         setAnalysisResult(data.analysis)
         // 如果原来有上传的图片，就把它显示在输出区域
         if (image) {
@@ -172,7 +178,7 @@ export function ImageEditor() {
 
             <div className="rounded-lg border border-border/50 bg-muted/30 p-4">
               <p className="text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground">💡 Tip:</span> Upload an image and ask questions about it. Gemini 2.5 Flash Image can analyze images and answer your questions!
+                <span className="font-semibold text-foreground">💡 Tip:</span> Describe what image you want to generate, or upload an image and ask to edit it. Nano Banana Pro can generate and edit images!
               </p>
             </div>
 

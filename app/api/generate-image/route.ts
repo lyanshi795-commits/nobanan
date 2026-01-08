@@ -1,4 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { OpenRouter } from '@openrouter/sdk'
+
+const openrouter = new OpenRouter({
+  apiKey: process.env.OPENROUTER_API_KEY || '',
+})
 
 export async function POST(request: NextRequest) {
   try {
@@ -11,9 +16,9 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    console.log('Processing with Gemini 2.5 Flash Image')
+    console.log('Processing with Nano Banana Pro (Image Generation)')
     console.log('Prompt:', prompt)
-    console.log('Has image:', !!referenceImageUrl)
+    console.log('Has reference image:', !!referenceImageUrl)
 
     const apiKey = process.env.OPENROUTER_API_KEY
 
@@ -24,68 +29,77 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // 构建消息内容
-    const messageContent: any[] = [
-      {
-        type: 'text',
-        text: prompt
-      }
-    ]
-
-    // 如果有参考图片，添加到消息中
-    if (referenceImageUrl) {
-      messageContent.push({
-        type: 'image_url',
-        image_url: {
-          url: referenceImageUrl
-        }
-      })
-    }
-
     try {
-      // 直接使用 fetch 调用 OpenRouter API
-      console.log('Calling Gemini 2.5 Flash Image API...')
+      console.log('Calling Nano Banana Pro API via native fetch...')
 
-      const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${apiKey}`,
-          'Content-Type': 'application/json',
-          'HTTP-Referer': 'http://localhost:3002',
-          'X-Title': 'Image Editor'
-        },
-        body: JSON.stringify({
-          model: 'google/gemini-2.5-flash-image',
-          messages: [
+      const messages = [
+        {
+          role: "user",
+          content: [
             {
-              role: 'user',
-              content: messageContent
+              type: "text",
+              text: prompt
             }
           ]
+        }
+      ] as any[]
+
+      if (referenceImageUrl) {
+        messages[0].content.push({
+          type: "image_url",
+          image_url: {
+            url: referenceImageUrl
+          }
+        })
+      }
+
+      console.log('Sending request to OpenRouter...')
+
+      const apiResponse = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+          "HTTP-Referer": "http://localhost:3000",
+          "X-Title": "Image Editor Clone",
+        },
+        body: JSON.stringify({
+          model: "google/gemini-2.5-flash-image-preview",
+          messages: messages,
+          modalities: ["image", "text"]
         })
       })
 
-      if (!response.ok) {
-        const errorText = await response.text()
-        console.error('OpenRouter API error:', errorText)
-        throw new Error(`API request failed: ${response.status} ${errorText}`)
+      if (!apiResponse.ok) {
+        const errorText = await apiResponse.text()
+        console.error('OpenRouter API error response:', errorText)
+        throw new Error(`OpenRouter API failed (${apiResponse.status}): ${errorText}`)
       }
 
-      const data = await response.json()
-      const aiResponse = data.choices?.[0]?.message?.content
+      const result = await apiResponse.json()
+      const message = result.choices[0].message
 
-      if (!aiResponse) {
-        throw new Error('No response from Gemini API')
-      }
+      console.log('Full message response content length:', message.content?.length || 0)
 
-      console.log('Gemini response received:', aiResponse.substring(0, 100) + '...')
-
-      // 返回 Gemini 的文本响应
-      return NextResponse.json({
+      // 处理返回的图片和文本
+      const response: any = {
         success: true,
-        analysis: aiResponse,
-        message: 'Image analyzed successfully'
-      })
+        analysis: message.content || '',
+        images: []
+      }
+
+      // 如果有生成的图片，添加到响应中
+      if (message.images && message.images.length > 0) {
+        response.images = message.images.map((image: any, index: number) => ({
+          index: index + 1,
+          url: image.image_url.url
+        }))
+        console.log(`Generated ${message.images.length} image(s)`)
+      }
+
+      console.log('API response processed successfully')
+
+      return NextResponse.json(response)
 
     } catch (error: any) {
       console.error('Gemini API error:', error)

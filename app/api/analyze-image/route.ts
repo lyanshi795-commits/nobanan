@@ -1,13 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import OpenAI from 'openai'
+import { OpenRouter } from '@openrouter/sdk'
 
-const openai = new OpenAI({
-  baseURL: "https://openrouter.ai/api/v1",
-  apiKey: process.env.OPENROUTER_API_KEY,
-  defaultHeaders: {
-    "HTTP-Referer": "http://localhost:3001",
-    "X-Title": "Image Editor Clone",
-  },
+const openrouter = new OpenRouter({
+  apiKey: process.env.OPENROUTER_API_KEY || '',
 })
 
 export async function POST(request: NextRequest) {
@@ -21,30 +16,23 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const completion = await openai.chat.completions.create({
-      model: "google/gemini-2.5-flash-image",
+    const result = await openrouter.chat.send({
+      model: "google/gemini-3-pro-image-preview",
       messages: [
         {
           role: "user",
-          content: [
-            {
-              type: "text",
-              text: prompt
-            },
-            {
-              type: "image_url",
-              image_url: {
-                url: imageUrl
-              }
-            }
-          ]
+          content: `${prompt}\n\nImage: ${imageUrl}`
         }
-      ]
+      ],
+      modalities: ["image", "text"]
     })
 
-    const result = completion.choices[0].message.content
+    const message = result.choices[0].message
 
-    return NextResponse.json({ result })
+    // 返回文本分析结果
+    const textResult = message.content || ''
+
+    return NextResponse.json({ result: textResult })
   } catch (error) {
     console.error('Error analyzing image:', error)
     return NextResponse.json(
