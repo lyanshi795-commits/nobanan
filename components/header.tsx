@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { UserNav } from "@/components/auth/UserNav"
 
 export function Header() {
   const scrollToEditor = () => {
@@ -31,9 +32,12 @@ export function Header() {
             </a>
           </nav>
 
-          <Button onClick={scrollToEditor} className="font-medium">
-            Start Editing
-          </Button>
+          <div className="flex items-center gap-4">
+            <Button onClick={scrollToEditor} className="font-medium">
+              Start Editing
+            </Button>
+            <UserNav />
+          </div>
         </div>
       </div>
     </header>
