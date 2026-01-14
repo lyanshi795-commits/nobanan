@@ -24,8 +24,11 @@ export function Header() {
             <a href="#showcase" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               Showcase
             </a>
-            <a href="#testimonials" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              Reviews
+            <a href="/pricing" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+              Pricing
+            </a>
+            <a href="/docs" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+              Docs
             </a>
             <a href="#faq" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               FAQ
@@ -33,8 +36,13 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Button onClick={scrollToEditor} className="font-medium">
+            <Button onClick={scrollToEditor} className="font-medium hidden sm:inline-flex">
               Start Editing
+            </Button>
+            <Button variant="ghost" size="sm" asChild className="hidden sm:inline-flex">
+              <a href="https://billing.stripe.com/p/login/test" target="_blank" rel="noopener noreferrer">
+                Manage Subscription
+              </a>
             </Button>
             <UserNav />
           </div>

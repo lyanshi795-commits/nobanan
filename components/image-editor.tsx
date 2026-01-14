@@ -178,7 +178,7 @@ export function ImageEditor() {
 
             <div className="rounded-lg border border-border/50 bg-muted/30 p-4">
               <p className="text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground">💡 Tip:</span> Describe what image you want to generate, or upload an image and ask to edit it. Nano Banana Pro can generate and edit images!
+                <span className="font-semibold text-foreground">💡 Tip:</span> Describe what image you want to generate, or upload an image and ask to edit it. Powered by third-party AI models. We are an independent product and not affiliated with or endorsed by Google.
               </p>
             </div>
 

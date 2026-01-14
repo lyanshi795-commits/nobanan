@@ -1,33 +1,30 @@
 import { Card } from "@/components/ui/card"
-import { Star } from "lucide-react"
+import { Sparkles, Shield, Zap, Globe } from "lucide-react"
 
-const testimonials = [
+const highlights = [
   {
-    name: "Sarah Chen",
-    role: "Digital Artist",
-    content:
-      "This editor completely transformed my workflow. The character consistency is incredible - miles ahead of anything else I've used!",
-    avatar: "🎨",
+    icon: Sparkles,
+    title: "AI-Powered Editing",
+    description: "Transform your images with natural language commands. Simply describe what you want, and watch it happen.",
+    color: "text-purple-500",
   },
   {
-    name: "Marcus Rodriguez",
-    role: "Content Creator",
-    content:
-      "Creating consistent content has never been easier. It maintains perfect details across edits. Absolutely game-changing.",
-    avatar: "📸",
+    icon: Zap,
+    title: "Lightning Fast",
+    description: "Get professional results in seconds, not hours. Our optimized pipeline ensures rapid processing.",
+    color: "text-amber-500",
   },
   {
-    name: "Emily Watson",
-    role: "Professional Editor",
-    content: "The scene blending is so natural and realistic. One-shot editing is practically solved with this tool!",
-    avatar: "✨",
+    icon: Shield,
+    title: "Privacy First",
+    description: "Your images are processed securely and never stored without permission. Full data protection guaranteed.",
+    color: "text-green-500",
   },
   {
-    name: "David Kim",
-    role: "Marketing Director",
-    content:
-      "Lightning-fast processing without compromising quality. This has become essential for our team's creative work.",
-    avatar: "🚀",
+    icon: Globe,
+    title: "Works Everywhere",
+    description: "Access from any device, any browser. No software installation required - just start editing.",
+    color: "text-blue-500",
   },
 ]
 
@@ -39,30 +36,25 @@ export function Testimonials() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-balance">What Creators Are Saying</h2>
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-balance">Why Choose AI Image Editor</h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-pretty">
-            Trusted by professionals worldwide
+            Powerful features designed for modern creators
           </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="border-border/50 bg-card/50 p-6 backdrop-blur-sm">
-              <div className="mb-4 flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-accent text-accent" />
-                ))}
-              </div>
-              <p className="mb-4 text-sm leading-relaxed text-foreground">"{testimonial.content}"</p>
-              <div className="flex items-center gap-3">
-                <div className="text-2xl">{testimonial.avatar}</div>
-                <div>
-                  <p className="font-semibold text-sm">{testimonial.name}</p>
-                  <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+          {highlights.map((highlight, index) => {
+            const Icon = highlight.icon
+            return (
+              <Card key={index} className="border-border/50 bg-card/50 p-6 backdrop-blur-sm hover:border-accent/50 transition-colors">
+                <div className={`mb-4 ${highlight.color}`}>
+                  <Icon className="h-8 w-8" />
                 </div>
-              </div>
-            </Card>
-          ))}
+                <h3 className="mb-2 font-semibold text-lg">{highlight.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{highlight.description}</p>
+              </Card>
+            )
+          })}
         </div>
       </div>
     </section>

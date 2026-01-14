@@ -61,7 +61,15 @@ export function FAQ() {
             </AccordionItem>
           ))}
         </Accordion>
+
+        {/* Independent Product Disclaimer */}
+        <div className="mt-12 p-4 bg-muted/50 rounded-lg border border-border/30 text-center">
+          <p className="text-sm text-muted-foreground">
+            <strong>Independent product.</strong> Not affiliated with Google, OpenAI, or any AI model providers.
+          </p>
+        </div>
       </div>
     </section>
   )
 }
+

@@ -8,8 +8,14 @@ export function Footer() {
               <span className="text-2xl">🍌</span>
               <span className="text-lg font-semibold">AI Image Editor</span>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground mb-4">
               Transform images with natural language. Professional AI-powered editing.
+            </p>
+            <p className="text-xs text-muted-foreground">
+              <strong>Contact:</strong><br />
+              <a href="mailto:support@nobanan.online" className="hover:text-foreground transition-colors">
+                support@nobanan.online
+              </a>
             </p>
           </div>
 
@@ -27,38 +33,38 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="transition-colors hover:text-foreground">
+                <a href="/pricing" className="transition-colors hover:text-foreground">
                   Pricing
                 </a>
               </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-foreground">
+              {/* <li>
+                <a href="/docs" className="transition-colors hover:text-foreground">
                   API
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
           <div>
             <h3 className="mb-4 text-sm font-semibold">Resources</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>
-                <a href="#" className="transition-colors hover:text-foreground">
+              {/* <li>
+                <a href="/docs" className="transition-colors hover:text-foreground">
                   Documentation
                 </a>
               </li>
               <li>
-                <a href="#" className="transition-colors hover:text-foreground">
-                  Tutorials
+                <a href="/docs#quickstart" className="transition-colors hover:text-foreground">
+                  Quick Start
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a href="#faq" className="transition-colors hover:text-foreground">
                   FAQ
                 </a>
               </li>
               <li>
-                <a href="#" className="transition-colors hover:text-foreground">
+                <a href="/contact" className="transition-colors hover:text-foreground">
                   Support
                 </a>
               </li>
@@ -66,43 +72,46 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Company</h3>
+            <h3 className="mb-4 text-sm font-semibold">Legal</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
-                <a href="#" className="transition-colors hover:text-foreground">
-                  About
+                <a href="/privacy" className="transition-colors hover:text-foreground">
+                  Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="transition-colors hover:text-foreground">
-                  Blog
+                <a href="/terms" className="transition-colors hover:text-foreground">
+                  Terms of Service
                 </a>
               </li>
               <li>
-                <a href="#" className="transition-colors hover:text-foreground">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-foreground">
-                  Contact
+                <a href="/terms#refunds" className="transition-colors hover:text-foreground">
+                  Refund Policy
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-border/40 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        {/* Independent Product Disclaimer */}
+        <div className="mt-8 p-4 bg-muted/30 rounded-lg border border-border/30">
+          <p className="text-xs text-muted-foreground text-center">
+            <strong>Independent product.</strong> AI Image Editor provides a user-friendly interface built on top of AI models to enhance usability and provide additional features.
+            We are an independent service and not affiliated with Google, OpenAI, or any AI model providers.
+          </p>
+        </div>
+
+        <div className="mt-8 border-t border-border/40 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">© 2026 AI Image Editor. All rights reserved.</p>
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="#" className="transition-colors hover:text-foreground">
+            <a href="/privacy" className="transition-colors hover:text-foreground">
               Privacy
             </a>
-            <a href="#" className="transition-colors hover:text-foreground">
+            <a href="/terms" className="transition-colors hover:text-foreground">
               Terms
             </a>
-            <a href="#" className="transition-colors hover:text-foreground">
-              Cookies
+            <a href="/contact" className="transition-colors hover:text-foreground">
+              Contact
             </a>
           </div>
         </div>
@@ -110,3 +119,4 @@ export function Footer() {
     </footer>
   )
 }
+
