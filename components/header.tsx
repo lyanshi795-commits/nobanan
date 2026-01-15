@@ -40,7 +40,7 @@ export function Header() {
               Start Editing
             </Button>
             <Button variant="ghost" size="sm" asChild className="hidden sm:inline-flex">
-              <a href="https://billing.stripe.com/p/login/test" target="_blank" rel="noopener noreferrer">
+              <a href="/pricing">
                 Manage Subscription
               </a>
             </Button>

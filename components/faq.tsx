@@ -65,7 +65,7 @@ export function FAQ() {
         {/* Independent Product Disclaimer */}
         <div className="mt-12 p-4 bg-muted/50 rounded-lg border border-border/30 text-center">
           <p className="text-sm text-muted-foreground">
-            <strong>Independent product.</strong> Not affiliated with Google, OpenAI, or any AI model providers.
+            <strong>Independent product.</strong> Powered by third-party AI models. Not affiliated with or endorsed by any provider.
           </p>
         </div>
       </div>

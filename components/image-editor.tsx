@@ -52,7 +52,7 @@ export function ImageEditor() {
 
       const data = await response.json()
 
-      // 处理 Nano Banana Pro 返回的图片和文本
+      // 处理返回的图片和文本
       if (data.images && data.images.length > 0) {
         // 如果有生成的图片，显示第一张
         setGeneratedImage(data.images[0].url)
@@ -178,7 +178,7 @@ export function ImageEditor() {
 
             <div className="rounded-lg border border-border/50 bg-muted/30 p-4">
               <p className="text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground">💡 Tip:</span> Describe what image you want to generate, or upload an image and ask to edit it. Powered by third-party AI models. We are an independent product and not affiliated with or endorsed by Google.
+                <span className="font-semibold text-foreground">💡 Tip:</span> Describe what image you want to generate, or upload an image and ask to edit it. Powered by third-party AI models. Not affiliated with or endorsed by any provider.
               </p>
             </div>
 

@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    console.log('Processing with Nano Banana Pro (Image Generation)')
+    console.log('Processing with AI Model (Image Generation)')
     console.log('Prompt:', prompt)
     console.log('Has reference image:', !!referenceImageUrl)
 
@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
     }
 
     try {
-      console.log('Calling Nano Banana Pro API via native fetch...')
+      console.log('Calling AI Model API via native fetch...')
 
       const messages = [
         {

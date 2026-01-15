@@ -70,7 +70,7 @@ export default function ContactPage() {
 
                     <div className="mt-8 text-center p-4 bg-muted/50 rounded-lg">
                         <p className="text-xs text-muted-foreground">
-                            Independent product. Not affiliated with Google, OpenAI, or any AI model providers.
+                            Independent product. Powered by third-party AI models. Not affiliated with or endorsed by any provider.
                         </p>
                     </div>
                 </div>

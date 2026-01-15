@@ -13,7 +13,7 @@ const plans = [
   {
     name: "Basic",
     description: "Perfect for starters",
-    price: 9.9,
+    price: 9.90,
     yearlyPrice: 99,
     credits: 200,
     images: "100+",
@@ -28,21 +28,21 @@ const plans = [
     popular: false,
   },
   {
-    name: "Pro",
+    name: "Plus",
     description: "Best for creators",
-    price: 19,
+    price: 19.00,
     yearlyPrice: 190,
-    credits: 500,
-    images: "250+",
+    credits: 450,
+    images: "200+",
     features: [
-      "500 Credits / month",
+      "450 Credits / month",
       "Priority generation",
       "Priority support",
       "Commercial Use License",
       "Access to new features first",
       "No rollover of unused credits"
     ],
-    productId: "prod_pro",
+    productId: "prod_plus",
     popular: true,
   },
   {
@@ -68,7 +68,7 @@ const plans = [
 const faqs = [
   {
     question: "How do credits work?",
-    answer: "Credits are used to generate images. 2 credits = 1 high-quality image generation. Credits refresh monthly on your billing date."
+    answer: "Credits are used to generate images. 1 credit = 1 standard generation. HD costs +1 credit per image. Credits refresh monthly on your billing date."
   },
   {
     question: "Do unused credits roll over?",

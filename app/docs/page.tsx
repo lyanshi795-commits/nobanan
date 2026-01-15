@@ -261,7 +261,7 @@ console.log(data.imageUrl);`}</code>
                 {/* Disclaimer */}
                 <div className="text-center mt-12 p-6 bg-muted/50 rounded-lg">
                     <p className="text-sm text-muted-foreground">
-                        <strong>Independent product.</strong> Not affiliated with Google, OpenAI, or any AI model providers.
+                        <strong>Independent product.</strong> Powered by third-party AI models. Not affiliated with or endorsed by any provider.
                     </p>
                 </div>
             </div>
