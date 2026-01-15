@@ -8,6 +8,10 @@ export function GoogleSignIn() {
     const supabase = createClient()
 
     const handleSignIn = async () => {
+        if (!supabase) {
+            console.error("Supabase not configured")
+            return
+        }
         await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {

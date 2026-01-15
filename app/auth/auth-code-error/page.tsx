@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 
+export const dynamic = "force-dynamic";
+
 export default function AuthCodeError() {
     return (
         <div className="flex min-h-screen flex-col">
@@ -15,6 +17,8 @@ export default function AuthCodeError() {
                         </h1>
                         <p className="text-sm text-muted-foreground">
                             There was a problem signing you in. Please try again.
+                            <br /><br />
+                            If the issue persists, please contact <a href="mailto:support@nobanan.online" className="underline">support@nobanan.online</a>
                         </p>
                     </div>
                     <Button asChild>

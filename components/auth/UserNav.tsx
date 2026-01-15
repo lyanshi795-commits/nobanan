@@ -20,6 +20,11 @@ export function UserNav() {
     const supabase = createClient()
 
     useEffect(() => {
+        if (!supabase) {
+            setLoading(false)
+            return
+        }
+
         const getUser = async () => {
             const { data: { user } } = await supabase.auth.getUser()
             setUser(user)
@@ -32,9 +37,10 @@ export function UserNav() {
         })
 
         return () => subscription.unsubscribe()
-    }, [supabase.auth])
+    }, [supabase])
 
     const handleSignOut = async () => {
+        if (!supabase) return
         await supabase.auth.signOut()
         window.location.href = '/'
     }

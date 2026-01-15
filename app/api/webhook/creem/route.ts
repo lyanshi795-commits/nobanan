@@ -12,6 +12,7 @@ export const POST = Webhook({
 
         try {
             const supabase = await createClient()
+            if (!supabase) return
 
             // You can store subscription info in your database here
             // Example: Update user's subscription status
@@ -44,6 +45,7 @@ export const POST = Webhook({
 
         try {
             const supabase = await createClient()
+            if (!supabase) return
 
             // Update user's access status
             const { error } = await supabase
@@ -72,6 +74,7 @@ export const POST = Webhook({
 
         try {
             const supabase = await createClient()
+            if (!supabase) return
 
             // Update user's access status
             const { error } = await supabase
