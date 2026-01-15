@@ -132,7 +132,7 @@ export default function PrivacyPage() {
                                 If you have any questions about this Privacy Policy or our data practices, please contact us at:
                             </p>
                             <p className="text-muted-foreground mt-4">
-                                <strong>Email:</strong> <a href="mailto:support@nobanan.online" className="hover:underline">support@nobanan.online</a><br />
+                                <strong>Email:</strong> <a href="mailto:leo@nobanban.online" className="hover:underline">leo@nobanban.online</a><br />
                                 <strong>Address:</strong> AI Image Editor Team
                             </p>
                         </section>

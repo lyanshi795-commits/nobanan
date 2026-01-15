@@ -13,8 +13,8 @@ export function Footer() {
             </p>
             <p className="text-xs text-muted-foreground">
               <strong>Contact:</strong><br />
-              <a href="mailto:leo@nobanan.online" className="hover:text-foreground transition-colors">
-                leo@nobanan.online
+              <a href="mailto:leo@nobanban.online" className="hover:text-foreground transition-colors">
+                leo@nobanban.online
               </a>
             </p>
           </div>

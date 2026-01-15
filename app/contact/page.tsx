@@ -35,8 +35,8 @@ export default function ContactPage() {
                                     <p className="text-sm text-muted-foreground mb-2">
                                         For general inquiries, billing, and technical support.
                                     </p>
-                                    <a href="mailto:support@nobanan.online" className="text-primary hover:underline font-medium">
-                                        support@nobanan.online
+                                    <a href="mailto:leo@nobanban.online" className="text-primary hover:underline font-medium">
+                                        leo@nobanban.online
                                     </a>
                                 </div>
                             </div>
