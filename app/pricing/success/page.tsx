@@ -58,8 +58,8 @@ export default function SuccessPage() {
 
                     <p className="text-xs text-muted-foreground pt-4">
                         Need help? Contact our support team at{" "}
-                        <a href="mailto:leo@nobanban.online" className="text-amber-600 hover:underline">
-                            leo@nobanban.online
+                        <a href="mailto:leo@nobanan.online" className="text-amber-600 hover:underline">
+                            leo@nobanan.online
                         </a>
                     </p>
                 </div>

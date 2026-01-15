@@ -18,7 +18,7 @@ export default function AuthCodeError() {
                         <p className="text-sm text-muted-foreground">
                             There was a problem signing you in. Please try again.
                             <br /><br />
-                            If the issue persists, please contact <a href="mailto:leo@nobanban.online" className="underline">leo@nobanban.online</a>
+                            If the issue persists, please contact <a href="mailto:leo@nobanan.online" className="underline">leo@nobanan.online</a>
                         </p>
                     </div>
                     <Button asChild>
