@@ -13,8 +13,8 @@ export function Footer() {
             </p>
             <p className="text-xs text-muted-foreground">
               <strong>Contact:</strong><br />
-              <a href="mailto:support@nobanan.online" className="hover:text-foreground transition-colors">
-                support@nobanan.online
+              <a href="mailto:leo@nobanan.online" className="hover:text-foreground transition-colors">
+                leo@nobanan.online
               </a>
             </p>
           </div>
@@ -23,49 +23,19 @@ export function Footer() {
             <h3 className="mb-4 text-sm font-semibold">Product</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
-                <a href="#features" className="transition-colors hover:text-foreground">
-                  Features
-                </a>
-              </li>
-              {/* <li>
-                <a href="#showcase" className="transition-colors hover:text-foreground">
-                  Showcase
-                </a>
-              </li> */}
-              <li>
                 <a href="/pricing" className="transition-colors hover:text-foreground">
                   Pricing
                 </a>
               </li>
-              {/* <li>
-                <a href="/docs" className="transition-colors hover:text-foreground">
-                  API
-                </a>
-              </li> */}
             </ul>
           </div>
 
           <div>
             <h3 className="mb-4 text-sm font-semibold">Resources</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              {/* <li>
-                <a href="/docs" className="transition-colors hover:text-foreground">
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a href="/docs#quickstart" className="transition-colors hover:text-foreground">
-                  Quick Start
-                </a>
-              </li> */}
-              <li>
-                <a href="#faq" className="transition-colors hover:text-foreground">
-                  FAQ
-                </a>
-              </li>
               <li>
                 <a href="/contact" className="transition-colors hover:text-foreground">
-                  Support
+                  Contact
                 </a>
               </li>
             </ul>
@@ -82,11 +52,6 @@ export function Footer() {
               <li>
                 <a href="/terms" className="transition-colors hover:text-foreground">
                   Terms of Service
-                </a>
-              </li>
-              <li>
-                <a href="/terms#refunds" className="transition-colors hover:text-foreground">
-                  Refund Policy
                 </a>
               </li>
             </ul>
