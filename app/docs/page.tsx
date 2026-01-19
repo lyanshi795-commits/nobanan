@@ -4,8 +4,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Code, FileText, Zap, Key, Webhook, CheckCircle } from "lucide-react"
+import { Upload, MessageSquare, Sparkles, Download, Lightbulb, CheckCircle } from "lucide-react"
 
 export default function DocsPage() {
     return (
@@ -16,252 +15,179 @@ export default function DocsPage() {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <Badge variant="secondary" className="mb-4 px-4 py-2 text-sm font-medium">
-                        📚 Documentation
+                        📚 User Guide
                     </Badge>
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-600 dark:from-slate-100 dark:to-slate-400 bg-clip-text text-transparent">
-                        API Documentation
+                        How to Use AI Image Editor
                     </h1>
                     <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                        Integrate AI Image Editor into your applications with our powerful API
+                        Transform your images with natural language in just a few simple steps
                     </p>
                 </div>
 
-                {/* Quick Start Section */}
-                <section id="quickstart" className="mb-16">
-                    <Card className="border-2 border-amber-200 dark:border-amber-800">
+                {/* Getting Started */}
+                <section className="mb-16">
+                    <h2 className="text-3xl font-bold mb-8 text-center">Getting Started</h2>
+
+                    <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                        <Card className="text-center">
+                            <CardHeader>
+                                <div className="mx-auto p-3 bg-primary/10 rounded-full w-fit mb-2">
+                                    <Upload className="h-8 w-8 text-primary" />
+                                </div>
+                                <CardTitle>1. Upload Image</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-muted-foreground">
+                                    Drag and drop or click to upload any image. We support JPG, PNG, and WebP formats up to 10MB.
+                                </p>
+                            </CardContent>
+                        </Card>
+
+                        <Card className="text-center">
+                            <CardHeader>
+                                <div className="mx-auto p-3 bg-primary/10 rounded-full w-fit mb-2">
+                                    <MessageSquare className="h-8 w-8 text-primary" />
+                                </div>
+                                <CardTitle>2. Describe Your Edit</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-muted-foreground">
+                                    Type what you want to change in plain language. Be specific about colors, styles, or modifications.
+                                </p>
+                            </CardContent>
+                        </Card>
+
+                        <Card className="text-center">
+                            <CardHeader>
+                                <div className="mx-auto p-3 bg-primary/10 rounded-full w-fit mb-2">
+                                    <Sparkles className="h-8 w-8 text-primary" />
+                                </div>
+                                <CardTitle>3. Generate & Download</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-muted-foreground">
+                                    Click generate and watch the AI transform your image. Download when you&apos;re happy with the result.
+                                </p>
+                            </CardContent>
+                        </Card>
+                    </div>
+                </section>
+
+                {/* Tips for Best Results */}
+                <section className="mb-16">
+                    <Card className="max-w-4xl mx-auto border-2 border-amber-200 dark:border-amber-800">
                         <CardHeader>
                             <div className="flex items-center gap-3">
                                 <div className="p-2 bg-amber-100 dark:bg-amber-900 rounded-lg">
-                                    <Zap className="h-6 w-6 text-amber-600" />
+                                    <Lightbulb className="h-6 w-6 text-amber-600" />
                                 </div>
                                 <div>
-                                    <CardTitle className="text-2xl">Quick Start</CardTitle>
-                                    <CardDescription>Get started in under 5 minutes</CardDescription>
+                                    <CardTitle className="text-2xl">Tips for Best Results</CardTitle>
+                                    <CardDescription>Get the most out of AI Image Editor</CardDescription>
                                 </div>
                             </div>
                         </CardHeader>
-                        <CardContent className="space-y-6">
-                            <div className="space-y-4">
-                                <div className="flex items-start gap-4">
-                                    <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-semibold">
-                                        1
+                        <CardContent>
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="space-y-4">
+                                    <div className="flex gap-3">
+                                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <div>
+                                            <h4 className="font-semibold">Be Specific</h4>
+                                            <p className="text-sm text-muted-foreground">
+                                                Instead of &quot;make it better&quot;, try &quot;increase brightness and add warm tones&quot;
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4 className="font-semibold mb-1">Create an Account</h4>
-                                        <p className="text-muted-foreground text-sm">
-                                            Sign up for a free account to get your API key. New users receive free trial credits upon registration.
-                                        </p>
+                                    <div className="flex gap-3">
+                                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <div>
+                                            <h4 className="font-semibold">Describe Context</h4>
+                                            <p className="text-sm text-muted-foreground">
+                                                Mention what&apos;s in the image when making edits, e.g., &quot;change the dog&apos;s collar to red&quot;
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div className="flex items-start gap-4">
-                                    <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-semibold">
-                                        2
-                                    </div>
-                                    <div>
-                                        <h4 className="font-semibold mb-1">Get Your API Key</h4>
-                                        <p className="text-muted-foreground text-sm">
-                                            Navigate to your dashboard and copy your unique API key from the Developer section.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start gap-4">
-                                    <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-semibold">
-                                        3
-                                    </div>
-                                    <div>
-                                        <h4 className="font-semibold mb-1">Make Your First Request</h4>
-                                        <p className="text-muted-foreground text-sm">
-                                            Use the example code below to generate your first AI image.
-                                        </p>
+                                    <div className="flex gap-3">
+                                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <div>
+                                            <h4 className="font-semibold">Use Reference Styles</h4>
+                                            <p className="text-sm text-muted-foreground">
+                                                Try &quot;make it look like a watercolor painting&quot; or &quot;apply cinematic color grading&quot;
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div className="bg-slate-900 rounded-lg p-4 overflow-x-auto">
-                                <pre className="text-sm text-slate-100">
-                                    <code>{`// Example: Generate an image with natural language
-const response = await fetch('/api/generate-image', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer YOUR_API_KEY'
-  },
-  body: JSON.stringify({
-    prompt: "A beautiful sunset over mountains",
-    style: "photorealistic"
-  })
-});
-
-const data = await response.json();
-console.log(data.imageUrl);`}</code>
-                                </pre>
+                                <div className="space-y-4">
+                                    <div className="flex gap-3">
+                                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <div>
+                                            <h4 className="font-semibold">Start Simple</h4>
+                                            <p className="text-sm text-muted-foreground">
+                                                Make one edit at a time for more predictable results
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-3">
+                                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <div>
+                                            <h4 className="font-semibold">High Quality Source</h4>
+                                            <p className="text-sm text-muted-foreground">
+                                                Better input images lead to better results. Use clear, well-lit photos.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-3">
+                                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <div>
+                                            <h4 className="font-semibold">Iterate</h4>
+                                            <p className="text-sm text-muted-foreground">
+                                                Not happy? Try rephrasing your prompt or making incremental changes.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </CardContent>
                     </Card>
                 </section>
 
-                {/* API Reference */}
+                {/* Credit Usage */}
                 <section className="mb-16">
-                    <h2 className="text-3xl font-bold mb-8">API Reference</h2>
-
-                    <Tabs defaultValue="generate" className="w-full">
-                        <TabsList className="grid w-full grid-cols-3 mb-6">
-                            <TabsTrigger value="generate">Generate Image</TabsTrigger>
-                            <TabsTrigger value="edit">Edit Image</TabsTrigger>
-                            <TabsTrigger value="analyze">Analyze Image</TabsTrigger>
-                        </TabsList>
-
-                        <TabsContent value="generate">
-                            <Card>
-                                <CardHeader>
-                                    <div className="flex items-center gap-2">
-                                        <Badge className="bg-green-500">POST</Badge>
-                                        <code className="text-sm bg-muted px-2 py-1 rounded">/api/generate-image</code>
-                                    </div>
-                                    <CardDescription>Generate a new image from a text prompt</CardDescription>
-                                </CardHeader>
-                                <CardContent className="space-y-4">
-                                    <div>
-                                        <h4 className="font-semibold mb-2">Request Body</h4>
-                                        <div className="bg-muted rounded-lg p-4 space-y-2 text-sm">
-                                            <div className="flex justify-between">
-                                                <code>prompt</code>
-                                                <span className="text-muted-foreground">string, required</span>
-                                            </div>
-                                            <div className="flex justify-between">
-                                                <code>style</code>
-                                                <span className="text-muted-foreground">string, optional</span>
-                                            </div>
-                                            <div className="flex justify-between">
-                                                <code>aspectRatio</code>
-                                                <span className="text-muted-foreground">string, optional</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h4 className="font-semibold mb-2">Response</h4>
-                                        <div className="bg-slate-900 rounded-lg p-4">
-                                            <pre className="text-sm text-slate-100">
-                                                <code>{`{
-  "success": true,
-  "imageUrl": "https://...",
-  "creditsUsed": 2
-}`}</code>
-                                            </pre>
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </TabsContent>
-
-                        <TabsContent value="edit">
-                            <Card>
-                                <CardHeader>
-                                    <div className="flex items-center gap-2">
-                                        <Badge className="bg-green-500">POST</Badge>
-                                        <code className="text-sm bg-muted px-2 py-1 rounded">/api/edit-image</code>
-                                    </div>
-                                    <CardDescription>Edit an existing image with natural language instructions</CardDescription>
-                                </CardHeader>
-                                <CardContent className="space-y-4">
-                                    <div>
-                                        <h4 className="font-semibold mb-2">Request Body</h4>
-                                        <div className="bg-muted rounded-lg p-4 space-y-2 text-sm">
-                                            <div className="flex justify-between">
-                                                <code>imageUrl</code>
-                                                <span className="text-muted-foreground">string, required</span>
-                                            </div>
-                                            <div className="flex justify-between">
-                                                <code>instruction</code>
-                                                <span className="text-muted-foreground">string, required</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </TabsContent>
-
-                        <TabsContent value="analyze">
-                            <Card>
-                                <CardHeader>
-                                    <div className="flex items-center gap-2">
-                                        <Badge className="bg-green-500">POST</Badge>
-                                        <code className="text-sm bg-muted px-2 py-1 rounded">/api/analyze-image</code>
-                                    </div>
-                                    <CardDescription>Analyze an image and get detailed descriptions</CardDescription>
-                                </CardHeader>
-                                <CardContent className="space-y-4">
-                                    <div>
-                                        <h4 className="font-semibold mb-2">Request Body</h4>
-                                        <div className="bg-muted rounded-lg p-4 space-y-2 text-sm">
-                                            <div className="flex justify-between">
-                                                <code>imageUrl</code>
-                                                <span className="text-muted-foreground">string, required</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </TabsContent>
-                    </Tabs>
-                </section>
-
-                {/* Authentication */}
-                <section className="mb-16">
-                    <Card>
+                    <Card className="max-w-4xl mx-auto">
                         <CardHeader>
                             <div className="flex items-center gap-3">
-                                <Key className="h-6 w-6 text-primary" />
-                                <CardTitle>Authentication</CardTitle>
-                            </div>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                            <p className="text-muted-foreground">
-                                All API requests require authentication using a Bearer token in the Authorization header.
-                            </p>
-                            <div className="bg-slate-900 rounded-lg p-4">
-                                <pre className="text-sm text-slate-100">
-                                    <code>{`Authorization: Bearer YOUR_API_KEY`}</code>
-                                </pre>
-                            </div>
-                        </CardContent>
-                    </Card>
-                </section>
-
-                {/* Rate Limits */}
-                <section className="mb-16">
-                    <Card>
-                        <CardHeader>
-                            <div className="flex items-center gap-3">
-                                <Zap className="h-6 w-6 text-primary" />
-                                <CardTitle>Rate Limits</CardTitle>
+                                <Download className="h-6 w-6 text-primary" />
+                                <CardTitle>Understanding Credits</CardTitle>
                             </div>
                         </CardHeader>
                         <CardContent>
                             <div className="grid md:grid-cols-3 gap-4">
                                 <div className="p-4 bg-muted rounded-lg text-center">
-                                    <p className="text-2xl font-bold">100</p>
-                                    <p className="text-sm text-muted-foreground">Requests per minute (Basic)</p>
+                                    <p className="text-2xl font-bold">1 Credit</p>
+                                    <p className="text-sm text-muted-foreground">Standard edit</p>
                                 </div>
                                 <div className="p-4 bg-muted rounded-lg text-center">
-                                    <p className="text-2xl font-bold">500</p>
-                                    <p className="text-sm text-muted-foreground">Requests per minute (Pro)</p>
+                                    <p className="text-2xl font-bold">2 Credits</p>
+                                    <p className="text-sm text-muted-foreground">HD output</p>
                                 </div>
                                 <div className="p-4 bg-muted rounded-lg text-center">
-                                    <p className="text-2xl font-bold">2000</p>
-                                    <p className="text-sm text-muted-foreground">Requests per minute (Max)</p>
+                                    <p className="text-2xl font-bold">Monthly</p>
+                                    <p className="text-sm text-muted-foreground">Credits refresh each billing cycle</p>
                                 </div>
                             </div>
+                            <p className="mt-4 text-sm text-muted-foreground text-center">
+                                Need more credits? <a href="/pricing" className="text-primary hover:underline">View our plans</a>
+                            </p>
                         </CardContent>
                     </Card>
                 </section>
 
                 {/* Disclaimer */}
-                <div className="text-center mt-12 p-6 bg-muted/50 rounded-lg">
+                <div className="text-center mt-12 p-6 bg-muted/50 rounded-lg max-w-4xl mx-auto">
                     <p className="text-sm text-muted-foreground">
-                        <strong>Independent product.</strong> Powered by third-party AI models. Not affiliated with or endorsed by any provider.
+                        <strong>Independent product.</strong> Powered by third-party AI models. Not affiliated with or sponsored by any AI provider.
                     </p>
                 </div>
             </div>

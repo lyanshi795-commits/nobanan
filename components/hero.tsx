@@ -1,10 +1,43 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ImageEditor } from "@/components/image-editor"
+import { createClient } from "@/lib/supabase/client"
+import type { User } from "@supabase/supabase-js"
 
 export function Hero() {
-  const scrollToEditor = () => {
+  const [user, setUser] = useState<User | null>(null)
+  const [loading, setLoading] = useState(true)
+  const supabase = createClient()
+
+  useEffect(() => {
+    if (!supabase) {
+      setLoading(false)
+      return
+    }
+
+    const getUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser()
+      setUser(user)
+      setLoading(false)
+    }
+    getUser()
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null)
+    })
+
+    return () => subscription.unsubscribe()
+  }, [supabase])
+
+  const handleStartEditing = () => {
+    if (!user && !loading) {
+      // Redirect unauthenticated users to login
+      window.location.href = '/login'
+      return
+    }
+    // Scroll to editor for authenticated users
     document.getElementById("editor")?.scrollIntoView({ behavior: "smooth" })
   }
 
@@ -36,7 +69,7 @@ export function Hero() {
           </p>
 
           <div className="flex items-center justify-center gap-4">
-            <Button size="lg" onClick={scrollToEditor} className="h-12 px-8 text-base font-medium">
+            <Button size="lg" onClick={handleStartEditing} className="h-12 px-8 text-base font-medium">
               Start Editing Free
             </Button>
             <Button
@@ -48,6 +81,13 @@ export function Hero() {
               View Examples
             </Button>
           </div>
+
+          <p className="text-sm text-muted-foreground mt-6">
+            Need help? Contact us at{" "}
+            <a href="mailto:leo@nobanan.online" className="hover:underline">
+              leo@nobanan.online
+            </a>
+          </p>
         </div>
 
         <ImageEditor />
@@ -55,3 +95,4 @@ export function Hero() {
     </section>
   )
 }
+

@@ -61,7 +61,7 @@ export function Footer() {
         {/* Independent Product Disclaimer */}
         <div className="mt-8 p-4 bg-muted/30 rounded-lg border border-border/30">
           <p className="text-xs text-muted-foreground text-center">
-            <strong>Independent product.</strong> Powered by third-party AI models. Not affiliated with or endorsed by any provider.
+            <strong>Independent product.</strong> Powered by third-party AI models. Not affiliated with or sponsored by any AI provider.
           </p>
         </div>
 
