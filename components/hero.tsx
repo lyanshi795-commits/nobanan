@@ -70,7 +70,7 @@ export function Hero() {
 
           <div className="flex items-center justify-center gap-4">
             <Button size="lg" onClick={handleStartEditing} className="h-12 px-8 text-base font-medium">
-              Start Editing Free
+              Start Editing
             </Button>
             <Button
               size="lg"
@@ -84,8 +84,8 @@ export function Hero() {
 
           <p className="text-sm text-muted-foreground mt-6">
             Need help? Contact us at{" "}
-            <a href="mailto:leo@nobanan.online" className="hover:underline">
-              leo@nobanan.online
+            <a href="mailto:support@nobanan.online" className="hover:underline">
+              support@nobanan.online
             </a>
           </p>
         </div>

@@ -1,0 +1,19 @@
+﻿playwright : error: 
+unknown command 'test'
+At line:1 char:1
++ playwright test 
+--reporter=list 2>&1 | 
+Out-File -FilePath 
+creem-test- ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpe    cified: 
+(error:     unknown 
+command     
+'test':String) [    ], 
+RemoteExcepti    on
+    + FullyQualified    
+ErrorId : Native    
+CommandError
+ 

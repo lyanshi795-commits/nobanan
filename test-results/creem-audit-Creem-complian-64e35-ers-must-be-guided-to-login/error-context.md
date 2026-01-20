@@ -38,12 +38,12 @@
             - text: Natural Language
           - paragraph [ref=e29]: Professional AI-powered image editor that understands your commands. Edit photos with simple text prompts and get perfect results instantly.
           - generic [ref=e30]:
-            - button "Start Editing Free" [ref=e31]
+            - button "Start Editing" [ref=e31]
             - button "View Examples" [ref=e32]
           - paragraph [ref=e33]:
             - text: Need help? Contact us at
-            - link "leo@nobanan.online" [ref=e34] [cursor=pointer]:
-              - /url: mailto:leo@nobanan.online
+            - link "support@nobanan.online" [ref=e34] [cursor=pointer]:
+              - /url: mailto:support@nobanan.online
         - generic [ref=e37]:
           - generic [ref=e38]:
             - heading "Upload Image" [level=3] [ref=e40]
@@ -179,8 +179,8 @@
           - paragraph [ref=e185]: Transform images with natural language. Professional AI-powered editing.
           - paragraph [ref=e186]:
             - strong [ref=e187]: "Contact:"
-            - link "leo@nobanan.online" [ref=e188] [cursor=pointer]:
-              - /url: mailto:leo@nobanan.online
+            - link "support@nobanan.online" [ref=e188] [cursor=pointer]:
+              - /url: mailto:support@nobanan.online
         - generic [ref=e189]:
           - heading "Product" [level=3] [ref=e190]
           - list [ref=e191]:
@@ -214,7 +214,5 @@
             - /url: /terms
           - link "Contact" [ref=e214] [cursor=pointer]:
             - /url: /contact
-  - button "Open Next.js Dev Tools" [ref=e220] [cursor=pointer]:
-    - img [ref=e221]
-  - alert [ref=e224]
+  - alert [ref=e215]
 ```
