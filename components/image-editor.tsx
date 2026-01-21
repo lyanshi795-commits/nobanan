@@ -2,11 +2,13 @@
 
 import type React from "react"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
 import { Upload, Sparkles, Download, X } from "lucide-react"
+import { createClient } from "@/lib/supabase/client"
+import type { User } from "@supabase/supabase-js"
 
 export function ImageEditor() {
   const [image, setImage] = useState<string | null>(null)
@@ -15,6 +17,31 @@ export function ImageEditor() {
   const [analysisResult, setAnalysisResult] = useState<string | null>(null)
   const [generatedImage, setGeneratedImage] = useState<string | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
+
+  // ✅ 添加用户状态检查
+  const [user, setUser] = useState<User | null>(null)
+  const [loading, setLoading] = useState(true)
+  const supabase = createClient()
+
+  useEffect(() => {
+    if (!supabase) {
+      setLoading(false)
+      return
+    }
+
+    const getUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser()
+      setUser(user)
+      setLoading(false)
+    }
+    getUser()
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null)
+    })
+
+    return () => subscription.unsubscribe()
+  }, [supabase])
 
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -28,6 +55,12 @@ export function ImageEditor() {
   }
 
   const handleGenerate = async () => {
+    // ✅ 未登录用户强制跳转到 /login
+    if (!user && !loading) {
+      window.location.href = '/login'
+      return
+    }
+
     if (!prompt.trim()) return
     setIsProcessing(true)
     setAnalysisResult(null)
