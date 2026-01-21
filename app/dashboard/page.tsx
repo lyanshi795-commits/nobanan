@@ -64,7 +64,3 @@ export default function DashboardPage() {
     }
     return null // Don't render anything while redirecting
 }
-
-// This should not render as user will be redirected
-return null
-}
