@@ -1,14 +1,11 @@
 "use client"
 
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Mail, Clock, MessageSquare } from "lucide-react"
+import Link from "next/link";
+import { SUPPORT_EMAIL, SUPPORT_MAILTO } from "@/lib/support";
 
 export default function ContactPage() {
     return (
         <main className="min-h-screen flex flex-col">
-            <Header />
             <div className="flex-1 py-16 px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl">
                     <div className="text-center mb-12">
@@ -18,63 +15,32 @@ export default function ContactPage() {
                         </p>
                     </div>
 
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>Get in Touch</CardTitle>
-                            <CardDescription>
-                                Our support team is ready to assist you.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-6">
-                            <div className="flex items-start gap-4">
-                                <div className="p-2 bg-primary/10 rounded-lg">
-                                    <Mail className="h-6 w-6 text-primary" />
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold mb-1">Email Support</h3>
-                                    <p className="text-sm text-muted-foreground mb-2">
-                                        For general inquiries, billing, and technical support.
-                                    </p>
-                                    <a href="mailto:leo@nobanan.online" className="text-primary hover:underline font-medium">
-                                        leo@nobanan.online
-                                    </a>
-                                </div>
-                            </div>
+                    <div className="rounded-lg border p-6 space-y-6">
+                        <div>
+                            <h3 className="font-semibold mb-2">Email Support</h3>
+                            <p className="text-sm text-muted-foreground mb-2">
+                                For general inquiries, billing, and technical support.
+                            </p>
+                            <a href={SUPPORT_MAILTO} className="text-primary hover:underline font-medium">
+                                {SUPPORT_EMAIL}
+                            </a>
+                        </div>
 
-                            <div className="flex items-start gap-4">
-                                <div className="p-2 bg-primary/10 rounded-lg">
-                                    <Clock className="h-6 w-6 text-primary" />
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold mb-1">Response Time</h3>
-                                    <p className="text-sm text-muted-foreground">
-                                        We aim to respond to all inquiries within <strong>3 business days</strong>.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start gap-4">
-                                <div className="p-2 bg-primary/10 rounded-lg">
-                                    <MessageSquare className="h-6 w-6 text-primary" />
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold mb-1">Response Time</h3>
-                                    <p className="text-sm text-muted-foreground">
-                                        We usually reply within 24–72 hours.
-                                    </p>
-                                </div>
-                            </div>
-                        </CardContent>
-                    </Card>
+                        <div>
+                            <h3 className="font-semibold mb-2">Response Time</h3>
+                            <p className="text-sm text-muted-foreground">
+                                We usually reply within 24–72 hours.
+                            </p>
+                        </div>
+                    </div>
 
                     <div className="mt-8 text-center p-4 bg-muted/50 rounded-lg">
                         <p className="text-xs text-muted-foreground">
-                            Independent product. Powered by third-party AI models. Not affiliated with or sponsored by any AI provider.
+                            <strong>Independent product.</strong> Powered by third-party AI models. Not affiliated with or sponsored by any AI provider.
                         </p>
                     </div>
                 </div>
             </div>
-            <Footer />
         </main>
-    )
+    );
 }

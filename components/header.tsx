@@ -1,78 +1,45 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { UserNav } from "@/components/auth/UserNav"
-import { createClient } from "@/lib/supabase/client"
-import type { User } from "@supabase/supabase-js"
+import Link from "next/link";
+import { UserNav } from "@/components/auth/UserNav";
 
 export function Header() {
-  const [user, setUser] = useState<User | null>(null)
-  const [loading, setLoading] = useState(true)
-  const supabase = createClient()
-
-  useEffect(() => {
-    if (!supabase) {
-      setLoading(false)
-      return
-    }
-
-    const getUser = async () => {
-      const { data: { user } } = await supabase.auth.getUser()
-      setUser(user)
-      setLoading(false)
-    }
-    getUser()
-
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null)
-    })
-
-    return () => subscription.unsubscribe()
-  }, [supabase])
-
-  const handleStartEditing = () => {
-    if (!user && !loading) {
-      // Redirect unauthenticated users to login
-      window.location.href = '/login'
-      return
-    }
-    // Scroll to editor for authenticated users
-    document.getElementById("editor")?.scrollIntoView({ behavior: "smooth" })
-  }
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <div className="text-2xl">🍌</div>
             <span className="text-xl font-semibold tracking-tight">AI Image Editor</span>
-          </div>
+          </Link>
 
+          {/* ✅ 过审版：只保留永远不会出错的真实页面链接 */}
           <nav className="hidden items-center gap-8 md:flex">
-            <a href="/pricing" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+            <Link href="/pricing" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               Pricing
-            </a>
-            <a href="/contact" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+            </Link>
+            <Link href="/contact" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               Contact
-            </a>
+            </Link>
           </nav>
 
           <div className="flex items-center gap-4">
-            <Button onClick={handleStartEditing} className="font-medium hidden sm:inline-flex">
+            <Link
+              href="/login"
+              className="font-medium hidden sm:inline-flex h-10 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 items-center justify-center"
+            >
               Start Editing
-            </Button>
-            <Button variant="ghost" size="sm" asChild className="hidden sm:inline-flex">
-              <a href="/manage-subscription">
-                Manage Subscription
-              </a>
-            </Button>
+            </Link>
+            <Link
+              href="/manage-subscription"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground hidden sm:inline-flex"
+            >
+              Manage Subscription
+            </Link>
             <UserNav />
           </div>
         </div>
       </div>
     </header>
-  )
+  );
 }
-

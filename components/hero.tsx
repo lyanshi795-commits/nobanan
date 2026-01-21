@@ -1,9 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ImageEditor } from "@/components/image-editor"
 import { createClient } from "@/lib/supabase/client"
+import { SUPPORT_EMAIL, SUPPORT_MAILTO } from "@/lib/support"
 import type { User } from "@supabase/supabase-js"
 
 export function Hero() {
@@ -68,6 +70,7 @@ export function Hero() {
             and get results in seconds.
           </p>
 
+          {/* ✅ CTA buttons - Start Editing always goes to login for unauthenticated users */}
           <div className="flex items-center justify-center gap-4">
             <Button size="lg" onClick={handleStartEditing} className="h-12 px-8 text-base font-medium">
               Start Editing
@@ -75,17 +78,17 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
-              onClick={() => document.getElementById("showcase")?.scrollIntoView({ behavior: "smooth" })}
+              asChild
               className="h-12 px-8 text-base font-medium"
             >
-              View Examples
+              <Link href="/pricing">View Pricing</Link>
             </Button>
           </div>
 
           <p className="text-sm text-muted-foreground mt-6">
             Contact us at{" "}
-            <a href="mailto:leo@nobanan.online" className="hover:underline">
-              leo@nobanan.online
+            <a href={SUPPORT_MAILTO} className="hover:underline">
+              {SUPPORT_EMAIL}
             </a>
           </p>
         </div>
@@ -95,4 +98,3 @@ export function Hero() {
     </section>
   )
 }
-

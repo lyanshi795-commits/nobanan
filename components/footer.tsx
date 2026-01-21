@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { SUPPORT_EMAIL, SUPPORT_MAILTO } from "@/lib/support";
+
 export function Footer() {
   return (
     <footer className="border-t border-border/40 bg-background">
@@ -13,8 +16,8 @@ export function Footer() {
             </p>
             <p className="text-xs text-muted-foreground">
               <strong>Contact:</strong><br />
-              <a href="mailto:leo@nobanan.online" className="hover:text-foreground transition-colors">
-                leo@nobanan.online
+              <a href={SUPPORT_MAILTO} className="hover:text-foreground transition-colors">
+                {SUPPORT_EMAIL}
               </a>
             </p>
           </div>
@@ -23,9 +26,9 @@ export function Footer() {
             <h3 className="mb-4 text-sm font-semibold">Product</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
-                <a href="/pricing" className="transition-colors hover:text-foreground">
+                <Link href="/pricing" className="transition-colors hover:text-foreground">
                   Pricing
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -34,9 +37,9 @@ export function Footer() {
             <h3 className="mb-4 text-sm font-semibold">Resources</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
-                <a href="/contact" className="transition-colors hover:text-foreground">
+                <Link href="/contact" className="transition-colors hover:text-foreground">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -45,14 +48,14 @@ export function Footer() {
             <h3 className="mb-4 text-sm font-semibold">Legal</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
-                <a href="/privacy" className="transition-colors hover:text-foreground">
+                <Link href="/privacy" className="transition-colors hover:text-foreground">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/terms" className="transition-colors hover:text-foreground">
+                <Link href="/terms" className="transition-colors hover:text-foreground">
                   Terms of Service
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -68,19 +71,18 @@ export function Footer() {
         <div className="mt-8 border-t border-border/40 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">© 2026 AI Image Editor. All rights reserved.</p>
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="/privacy" className="transition-colors hover:text-foreground">
+            <Link href="/privacy" className="transition-colors hover:text-foreground">
               Privacy
-            </a>
-            <a href="/terms" className="transition-colors hover:text-foreground">
+            </Link>
+            <Link href="/terms" className="transition-colors hover:text-foreground">
               Terms
-            </a>
-            <a href="/contact" className="transition-colors hover:text-foreground">
+            </Link>
+            <Link href="/contact" className="transition-colors hover:text-foreground">
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
-
