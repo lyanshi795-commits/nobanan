@@ -95,7 +95,7 @@ export default function TermsPage() {
                                 <strong>Billing:</strong> By subscribing to a paid plan, you authorize us to charge your payment method on a recurring basis until you cancel.
                             </p>
                             <p className="text-muted-foreground leading-relaxed mb-4">
-                                <strong>Refunds:</strong> We will respond to all refund requests within 3 business days. Refund eligibility is determined on a case-by-case basis. To request a refund, please contact our support team at support@nobanan.online.
+                                <strong>Refunds:</strong> We will respond to all refund requests within 3 business days. Refund eligibility is determined on a case-by-case basis. To request a refund, please contact our support team at leo@nobanan.online.
                             </p>
                             <p className="text-muted-foreground leading-relaxed">
                                 <strong>Cancellation:</strong> You may cancel your subscription at any time through your account dashboard or by contacting our support team. Access to paid features will continue until the end of your current billing period. No partial refunds will be issued for unused portions of a billing period.
@@ -169,7 +169,7 @@ export default function TermsPage() {
                                 If you have any questions about these Terms of Service, please contact us at:
                             </p>
                             <p className="text-muted-foreground mt-4">
-                                <strong>Email:</strong> <a href="mailto:support@nobanan.online" className="hover:underline">support@nobanan.online</a><br />
+                                <strong>Email:</strong> <a href="mailto:leo@nobanan.online" className="hover:underline">leo@nobanan.online</a><br />
                                 <strong>Address:</strong> AI Image Editor Team
                             </p>
                         </section>

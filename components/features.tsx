@@ -30,7 +30,7 @@ const features = [
   {
     icon: Flame,
     title: "High-Quality Edits",
-    description: "Reliable results with minimal retries. No need for complex prompt engineering.",
+    description: "high-quality results with fewer retries. No need for complex prompt engineering.",
   },
 ]
 

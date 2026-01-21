@@ -125,11 +125,14 @@ export function PricingCard({
                 <div className="space-y-1 text-sm">
                     <p className="text-muted-foreground">
                         <span className="font-semibold text-foreground">{credits.toLocaleString()}</span> credits
-                        {billingPeriod === "yearly" ? "/year" : "/month"}
+                        {billingPeriod === "yearly" ? " / year" : " / month"}
                     </p>
-                    <p className="text-muted-foreground">
-                        <span className="font-semibold text-foreground">{images}</span> high-quality images/month
-                    </p>
+                    {images && (
+                        <p className="text-muted-foreground">
+                            <span className="font-semibold text-foreground">{images}</span> high-quality images
+                            {billingPeriod === "yearly" ? " / year" : " / month"}
+                        </p>
+                    )}
                 </div>
 
                 <div className="space-y-3 pt-4">

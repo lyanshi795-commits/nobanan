@@ -35,8 +35,8 @@ export default function ContactPage() {
                                     <p className="text-sm text-muted-foreground mb-2">
                                         For general inquiries, billing, and technical support.
                                     </p>
-                                    <a href="mailto:support@nobanan.online" className="text-primary hover:underline font-medium">
-                                        support@nobanan.online
+                                    <a href="mailto:leo@nobanan.online" className="text-primary hover:underline font-medium">
+                                        leo@nobanan.online
                                     </a>
                                 </div>
                             </div>
@@ -58,10 +58,9 @@ export default function ContactPage() {
                                     <MessageSquare className="h-6 w-6 text-primary" />
                                 </div>
                                 <div>
-                                    <h3 className="font-semibold mb-1">Support Hours</h3>
+                                    <h3 className="font-semibold mb-1">Response Time</h3>
                                     <p className="text-sm text-muted-foreground">
-                                        Monday - Friday<br />
-                                        9:00 AM - 5:00 PM (EST)
+                                        We usually reply within 24–72 hours.
                                     </p>
                                 </div>
                             </div>

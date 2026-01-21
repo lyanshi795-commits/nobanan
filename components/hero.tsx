@@ -65,7 +65,7 @@ export function Hero() {
 
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-pretty">
             Professional AI-powered image editor that understands your commands. Edit photos with simple text prompts
-            and get high-quality results in seconds.
+            and get results in seconds.
           </p>
 
           <div className="flex items-center justify-center gap-4">
@@ -83,9 +83,9 @@ export function Hero() {
           </div>
 
           <p className="text-sm text-muted-foreground mt-6">
-            Need help? Contact us at{" "}
-            <a href="mailto:support@nobanan.online" className="hover:underline">
-              support@nobanan.online
+            Contact us at{" "}
+            <a href="mailto:leo@nobanan.online" className="hover:underline">
+              leo@nobanan.online
             </a>
           </p>
         </div>

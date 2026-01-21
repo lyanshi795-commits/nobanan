@@ -104,8 +104,8 @@ export default function ManageSubscriptionPage() {
                             <div className="bg-muted/50 rounded-lg p-4">
                                 <p className="text-sm">
                                     <strong>Email:</strong>{" "}
-                                    <a href="mailto:support@nobanan.online" className="text-primary hover:underline">
-                                        support@nobanan.online
+                                    <a href="mailto:leo@nobanan.online" className="text-primary hover:underline">
+                                        leo@nobanan.online
                                     </a>
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-2">
