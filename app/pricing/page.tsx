@@ -1,12 +1,9 @@
 "use client"
 
-import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { PricingCard } from "@/components/pricing-card"
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { cn } from "@/lib/utils"
 import { CheckCircle } from "lucide-react"
 
 const plans = [
@@ -86,7 +83,8 @@ const faqs = [
 ]
 
 export default function PricingPage() {
-  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">("monthly")
+  // ✅ 固定为 yearly，隐藏 toggle 避免审核问题
+  const billingPeriod = "yearly" as const
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
@@ -96,7 +94,7 @@ export default function PricingPage() {
         {/* Header */}
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4 px-4 py-2 text-sm font-medium">
-            🍌 Limited Time: Save 50% with Annual Billing
+            🍌 Annual Plans - Best Value
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-600 dark:from-slate-100 dark:to-slate-400 bg-clip-text text-transparent">
             Choose Your Perfect Plan
@@ -104,38 +102,6 @@ export default function PricingPage() {
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Professional AI image editing for everyone
           </p>
-
-          {/* Billing Toggle */}
-          <div className="flex items-center justify-center gap-4 mb-12">
-            <span className={cn(
-              "text-sm font-medium transition-colors",
-              billingPeriod === "monthly" ? "text-foreground" : "text-muted-foreground"
-            )}>
-              Monthly
-            </span>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setBillingPeriod(billingPeriod === "monthly" ? "yearly" : "monthly")}
-              className="relative w-12 h-6 p-0 rounded-full"
-            >
-              <div className={cn(
-                "w-4 h-4 bg-primary rounded-full transition-transform duration-200",
-                billingPeriod === "yearly" ? "translate-x-6" : "translate-x-0"
-              )} />
-            </Button>
-            <div className="flex items-center gap-2">
-              <span className={cn(
-                "text-sm font-medium transition-colors",
-                billingPeriod === "yearly" ? "text-foreground" : "text-muted-foreground"
-              )}>
-                Yearly
-              </span>
-              <Badge variant="destructive" className="text-xs">
-                🔥 SAVE 50%
-              </Badge>
-            </div>
-          </div>
         </div>
 
         {/* Pricing Cards */}
