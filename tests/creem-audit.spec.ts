@@ -23,7 +23,7 @@ const RISKY_KEYWORDS = [
     "Powered by Google", // 避免误导
 ];
 
-const GOOD_EMAIL = "leo@nobanan.online";
+const GOOD_EMAIL = "support@nobanan.online";
 const BAD_EMAIL_DOMAIN = "nobanban.online";
 
 // 尝试自动找到 "生成/开始编辑" 的按钮（你站点按钮可能不同，所以用正则）

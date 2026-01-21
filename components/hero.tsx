@@ -65,7 +65,7 @@ export function Hero() {
 
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-pretty">
             Professional AI-powered image editor that understands your commands. Edit photos with simple text prompts
-            and get perfect results instantly.
+            and get high-quality results in seconds.
           </p>
 
           <div className="flex items-center justify-center gap-4">

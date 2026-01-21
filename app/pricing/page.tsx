@@ -18,7 +18,6 @@ const plans = [
     credits: 200,
     images: "100+",
     features: [
-      "200 Credits / month",
       "Standard generation speed",
       "Basic customer support",
       "Commercial Use License",
@@ -35,7 +34,6 @@ const plans = [
     credits: 450,
     images: "200+",
     features: [
-      "450 Credits / month",
       "Priority generation",
       "Priority support",
       "Commercial Use License",
@@ -53,7 +51,6 @@ const plans = [
     credits: 1500,
     images: "750+",
     features: [
-      "1500 Credits / month",
       "Fastest generation speed",
       "Dedicated support",
       "Commercial Use License",
@@ -89,7 +86,7 @@ const faqs = [
 ]
 
 export default function PricingPage() {
-  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">("yearly")
+  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">("monthly")
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
@@ -105,7 +102,7 @@ export default function PricingPage() {
             Choose Your Perfect Plan
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Unlimited creativity starts here
+            Professional AI image editing for everyone
           </p>
 
           {/* Billing Toggle */}

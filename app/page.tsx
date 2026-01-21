@@ -11,10 +11,16 @@ export default function HomePage() {
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <Features />
-      <Showcase />
+      <section id="features">
+        <Features />
+      </section>
+      <section id="showcase">
+        <Showcase />
+      </section>
 
-      <FAQ />
+      <section id="faq">
+        <FAQ />
+      </section>
       <Footer />
     </main>
   )

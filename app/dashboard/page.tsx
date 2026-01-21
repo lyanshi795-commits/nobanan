@@ -58,39 +58,13 @@ export default function DashboardPage() {
         )
     }
 
-    // Show login prompt for unauthenticated users
-    if (!user) {
-        return (
-            <div className="flex min-h-screen flex-col">
-                <Header />
-                <main className="flex-1 flex items-center justify-center px-4">
-                    <Card className="w-full max-w-md">
-                        <CardHeader className="text-center">
-                            <div className="mx-auto p-3 bg-primary/10 rounded-full w-fit mb-4">
-                                <LogIn className="h-8 w-8 text-primary" />
-                            </div>
-                            <CardTitle className="text-2xl">Login Required</CardTitle>
-                            <CardDescription>
-                                Please login with Google to access the dashboard and start editing images.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                            <Button asChild className="w-full" size="lg">
-                                <a href="/login">
-                                    Login with Google
-                                </a>
-                            </Button>
-                            <p className="text-xs text-muted-foreground text-center">
-                                Don&apos;t have an account? You&apos;ll be able to create one during the login process.
-                            </p>
-                        </CardContent>
-                    </Card>
-                </main>
-                <Footer />
-            </div>
-        )
+    // Redirect unauthenticated users
+    if (typeof window !== 'undefined') {
+        window.location.href = '/login?next=/dashboard'
     }
+    return null // Don't render anything while redirecting
+}
 
-    // This should not render as user will be redirected
-    return null
+// This should not render as user will be redirected
+return null
 }

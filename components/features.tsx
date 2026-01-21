@@ -15,7 +15,7 @@ const features = [
   {
     icon: Users,
     title: "Character Consistency",
-    description: "Maintain perfect character details across edits. Exceptional at preserving faces and identities.",
+    description: "Maintain character details across edits. Exceptional at preserving key subject details.",
   },
   {
     icon: ImageIcon,
@@ -29,8 +29,8 @@ const features = [
   },
   {
     icon: Flame,
-    title: "One-Shot Perfection",
-    description: "Perfect results in a single attempt. No need for multiple iterations or tweaking.",
+    title: "High-Quality Edits",
+    description: "Reliable results with minimal retries. No need for complex prompt engineering.",
   },
 ]
 

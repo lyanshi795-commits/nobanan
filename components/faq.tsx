@@ -4,7 +4,7 @@ const faqs = [
   {
     question: "How does the AI image editor work?",
     answer:
-      "Simply upload an image and describe your desired edits in natural language. Our AI understands complex instructions and generates perfectly edited images instantly. It processes your text prompt and applies professional-grade edits automatically.",
+      "Simply upload an image and describe your desired edits in natural language. Our AI understands complex instructions and generates high-quality edited images. It processes your text prompt and applies professional-grade edits automatically.",
   },
   {
     question: "What types of edits can it handle?",
@@ -14,17 +14,17 @@ const faqs = [
   {
     question: "How fast is the processing?",
     answer:
-      "Most edits are processed in under 2 seconds. Our optimized AI engine delivers lightning-fast results without compromising on quality, making it perfect for high-volume workflows.",
+      "Most edits are processed in under 2 seconds. Our optimized AI engine delivers fast results without compromising on quality, making it ideal for high-volume workflows.",
   },
   {
     question: "Can I use it for commercial projects?",
     answer:
-      "Yes! It's perfect for creating content for social media, marketing materials, product photography, and professional use. The high-quality outputs are suitable for commercial applications.",
+      "Yes! It's ideal for creating content for social media, marketing materials, product photography, and professional use. The high-quality outputs are suitable for commercial applications.",
   },
   {
     question: "What makes it better than other editors?",
     answer:
-      "Our AI excels in character consistency, scene blending, and one-shot editing. It maintains facial features and seamlessly integrates edits with backgrounds. Plus, it supports multi-image context for creating consistent content series.",
+      "Our AI excels in character consistency, scene blending, and high-quality editing. It maintains facial features and seamlessly integrates edits with backgrounds. Plus, it supports multi-image context for creating consistent content series.",
   },
   {
     question: "What file formats are supported?",
