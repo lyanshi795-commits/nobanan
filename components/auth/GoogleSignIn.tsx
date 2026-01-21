@@ -12,10 +12,14 @@ export function GoogleSignIn() {
             console.error("Supabase not configured")
             return
         }
+        // Get the 'next' param from URL to redirect user after login
+        const searchParams = new URLSearchParams(window.location.search)
+        const next = searchParams.get('next') || '/'
+
         await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {
-                redirectTo: `${window.location.origin}/auth/callback`,
+                redirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`,
             },
         })
     }

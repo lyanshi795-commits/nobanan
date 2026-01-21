@@ -70,9 +70,12 @@ export function Hero() {
             and get results in seconds.
           </p>
 
-          {/* ✅ CTA buttons - Start Editing always goes to login for unauthenticated users */}
+          {/* ✅ CTA buttons - Generate goes to dashboard (middleware handles auth redirect) */}
           <div className="flex items-center justify-center gap-4">
-            <Button size="lg" onClick={handleStartEditing} className="h-12 px-8 text-base font-medium">
+            <Button size="lg" asChild className="h-12 px-8 text-base font-medium">
+              <Link href="/dashboard">Generate</Link>
+            </Button>
+            <Button size="lg" onClick={handleStartEditing} className="h-12 px-8 text-base font-medium" variant="secondary">
               Start Editing
             </Button>
             <Button
