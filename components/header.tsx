@@ -51,17 +51,8 @@ export function Header() {
           </div>
 
           <nav className="hidden items-center gap-8 md:flex">
-            <a href="/#features" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              Features
-            </a>
-            <a href="/#showcase" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              Showcase
-            </a>
             <a href="/pricing" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               Pricing
-            </a>
-            <a href="/#faq" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              FAQ
             </a>
             <a href="/contact" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               Contact
