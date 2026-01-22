@@ -1,0 +1,218 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e5]:
+      - link "🍌 AI Image Editor" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: 🍌
+        - generic [ref=e8]: AI Image Editor
+      - navigation [ref=e9]:
+        - link "Pricing" [ref=e10] [cursor=pointer]:
+          - /url: /pricing
+        - link "Contact" [ref=e11] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e12]:
+        - link "Start Editing" [ref=e13] [cursor=pointer]:
+          - /url: /login?next=/dashboard
+        - link "Manage Subscription" [ref=e14] [cursor=pointer]:
+          - /url: /manage-subscription
+        - link "Login" [ref=e15] [cursor=pointer]:
+          - /url: /login
+    - generic [ref=e16]:
+      - generic [ref=e17]: 🍌
+      - generic [ref=e18]: 🦁
+      - generic [ref=e19]: 🔥
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - generic [ref=e22]:
+            - generic [ref=e23]: 🔥
+            - generic [ref=e24]: Lightning-fast AI image editing
+          - heading "Transform Images with Natural Language" [level=1] [ref=e25]:
+            - text: Transform Images with
+            - text: Natural Language
+          - paragraph [ref=e26]: Professional AI-powered image editor that understands your commands. Edit photos with simple text prompts and get results in seconds.
+          - generic [ref=e27]:
+            - link "Generate" [ref=e28] [cursor=pointer]:
+              - /url: /dashboard
+            - link "Start Editing" [ref=e29] [cursor=pointer]:
+              - /url: /login?next=/dashboard
+            - link "View Pricing" [ref=e30] [cursor=pointer]:
+              - /url: /pricing
+          - paragraph [ref=e31]:
+            - text: Contact us at
+            - link "leo@nobanan.online" [ref=e32] [cursor=pointer]:
+              - /url: mailto:leo@nobanan.online
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - heading "Upload Image" [level=3] [ref=e38]
+            - generic [ref=e39] [cursor=pointer]:
+              - img [ref=e40]
+              - paragraph [ref=e43]: Click to upload image
+              - paragraph [ref=e44]: PNG, JPG up to 10MB (Optional)
+          - generic [ref=e45]:
+            - heading "Main Prompt" [level=3] [ref=e46]
+            - 'textbox "Example: What is in this image? Describe it in detail..." [ref=e47]'
+            - generic [ref=e48]:
+              - button "Generate Now" [disabled]:
+                - img
+                - text: Generate Now
+              - button "Download Image" [disabled]:
+                - img
+                - text: Download Image
+            - paragraph [ref=e50]: "💡 Tip: Describe what image you want to generate, or upload an image and ask to edit it. Powered by third-party AI models. Not affiliated with or sponsored by any AI provider."
+    - generic [ref=e52]:
+      - generic [ref=e53]: 🦁
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - heading "Why Choose Our Editor?" [level=2] [ref=e56]
+          - paragraph [ref=e57]: Revolutionize your photo editing with advanced AI that understands natural language
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - img [ref=e61]
+            - heading "Natural Language Editing" [level=3] [ref=e63]
+            - paragraph [ref=e64]: Edit images using simple text prompts. Our AI understands complex instructions like a human.
+          - generic [ref=e66]:
+            - img [ref=e68]
+            - heading "Lightning Speed" [level=3] [ref=e70]
+            - paragraph [ref=e71]: Generate professional edits in seconds. Experience the fastest AI image processing available.
+          - generic [ref=e73]:
+            - img [ref=e75]
+            - heading "Character Consistency" [level=3] [ref=e80]
+            - paragraph [ref=e81]: Maintain character details across edits. Exceptional at preserving key subject details.
+          - generic [ref=e83]:
+            - img [ref=e85]
+            - heading "Scene Preservation" [level=3] [ref=e89]
+            - paragraph [ref=e90]: Seamlessly blend edits with original backgrounds. Superior scene fusion technology.
+          - generic [ref=e92]:
+            - img [ref=e94]
+            - heading "Multi-Image Context" [level=3] [ref=e98]
+            - paragraph [ref=e99]: Process multiple images simultaneously. Perfect for batch editing and workflows.
+          - generic [ref=e101]:
+            - img [ref=e103]
+            - heading "High-Quality Edits" [level=3] [ref=e105]
+            - paragraph [ref=e106]: high-quality results with fewer retries. No need for complex prompt engineering.
+    - generic [ref=e109]:
+      - generic [ref=e110]: 🔥
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - heading "Lightning-Fast AI Creations" [level=2] [ref=e113]
+          - paragraph [ref=e114]: See what our AI generates in milliseconds
+        - generic [ref=e115]:
+          - generic [ref=e116]:
+            - generic [ref=e117]:
+              - img "Portrait Enhancement" [ref=e118]
+              - generic [ref=e119]:
+                - img
+                - text: 0.8s
+            - generic [ref=e120]:
+              - heading "Portrait Enhancement" [level=3] [ref=e121]
+              - paragraph [ref=e122]: Professional headshot with studio lighting and background blur
+          - generic [ref=e123]:
+            - generic [ref=e124]:
+              - img "Scene Transformation" [ref=e125]
+              - generic [ref=e126]:
+                - img
+                - text: 1.2s
+            - generic [ref=e127]:
+              - heading "Scene Transformation" [level=3] [ref=e128]
+              - paragraph [ref=e129]: Changed environment from day to sunset with atmospheric effects
+          - generic [ref=e130]:
+            - generic [ref=e131]:
+              - img "Object Addition" [ref=e132]
+              - generic [ref=e133]:
+                - img
+                - text: 0.9s
+            - generic [ref=e134]:
+              - heading "Object Addition" [level=3] [ref=e135]
+              - paragraph [ref=e136]: Seamlessly added objects with perfect lighting and shadows
+          - generic [ref=e137]:
+            - generic [ref=e138]:
+              - img "Style Transfer" [ref=e139]
+              - generic [ref=e140]:
+                - img
+                - text: 1.0s
+            - generic [ref=e141]:
+              - heading "Style Transfer" [level=3] [ref=e142]
+              - paragraph [ref=e143]: Applied artistic style while maintaining subject recognition
+    - generic [ref=e145]:
+      - generic [ref=e146]: 🦁
+      - generic [ref=e147]:
+        - generic [ref=e148]:
+          - heading "Frequently Asked Questions" [level=2] [ref=e149]
+          - paragraph [ref=e150]: Everything you need to know about our AI image editor
+        - generic [ref=e151]:
+          - heading "How does the AI image editor work?" [level=3] [ref=e153]:
+            - button "How does the AI image editor work?" [ref=e154]:
+              - generic [ref=e155]: How does the AI image editor work?
+              - img
+          - heading "What types of edits can it handle?" [level=3] [ref=e157]:
+            - button "What types of edits can it handle?" [ref=e158]:
+              - generic [ref=e159]: What types of edits can it handle?
+              - img
+          - heading "How fast is the processing?" [level=3] [ref=e161]:
+            - button "How fast is the processing?" [ref=e162]:
+              - generic [ref=e163]: How fast is the processing?
+              - img
+          - heading "Can I use it for commercial projects?" [level=3] [ref=e165]:
+            - button "Can I use it for commercial projects?" [ref=e166]:
+              - generic [ref=e167]: Can I use it for commercial projects?
+              - img
+          - heading "What makes it better than other editors?" [level=3] [ref=e169]:
+            - button "What makes it better than other editors?" [ref=e170]:
+              - generic [ref=e171]: What makes it better than other editors?
+              - img
+          - heading "What file formats are supported?" [level=3] [ref=e173]:
+            - button "What file formats are supported?" [ref=e174]:
+              - generic [ref=e175]: What file formats are supported?
+              - img
+        - paragraph [ref=e177]:
+          - strong [ref=e178]: Independent product.
+          - text: Powered by third-party AI models. Not affiliated with or sponsored by any AI provider.
+    - generic [ref=e180]:
+      - generic [ref=e181]:
+        - generic [ref=e182]:
+          - generic [ref=e183]:
+            - generic [ref=e184]: 🍌
+            - generic [ref=e185]: AI Image Editor
+          - paragraph [ref=e186]: Transform images with natural language. Professional AI-powered editing.
+          - paragraph [ref=e187]:
+            - strong [ref=e188]: "Support Email:"
+            - link "leo@nobanan.online" [ref=e189] [cursor=pointer]:
+              - /url: mailto:leo@nobanan.online
+        - generic [ref=e190]:
+          - heading "Product" [level=3] [ref=e191]
+          - list [ref=e192]:
+            - listitem [ref=e193]:
+              - link "Pricing" [ref=e194] [cursor=pointer]:
+                - /url: /pricing
+        - generic [ref=e195]:
+          - heading "Resources" [level=3] [ref=e196]
+          - list [ref=e197]:
+            - listitem [ref=e198]:
+              - link "Contact" [ref=e199] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e200]:
+          - heading "Legal" [level=3] [ref=e201]
+          - list [ref=e202]:
+            - listitem [ref=e203]:
+              - link "Privacy Policy" [ref=e204] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e205]:
+              - link "Terms of Service" [ref=e206] [cursor=pointer]:
+                - /url: /terms
+      - paragraph [ref=e208]:
+        - strong [ref=e209]: Independent product.
+        - text: Powered by third-party AI models. Not affiliated with or sponsored by any AI provider.
+      - generic [ref=e210]:
+        - paragraph [ref=e211]: © 2026 AI Image Editor. All rights reserved.
+        - generic [ref=e212]:
+          - link "Privacy" [ref=e213] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms" [ref=e214] [cursor=pointer]:
+            - /url: /terms
+          - link "Contact" [ref=e215] [cursor=pointer]:
+            - /url: /contact
+  - alert [ref=e216]
+```

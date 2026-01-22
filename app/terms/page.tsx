@@ -169,7 +169,7 @@ export default function TermsPage() {
                                 If you have any questions about these Terms of Service, please contact us at:
                             </p>
                             <p className="text-muted-foreground mt-4">
-                                <strong>Email:</strong> <a href="mailto:leo@nobanan.online" className="hover:underline">leo@nobanan.online</a><br />
+                                <strong>Support Email:</strong> <a href="mailto:leo@nobanan.online" className="hover:underline">leo@nobanan.online</a><br />
                                 <strong>Address:</strong> AI Image Editor Team
                             </p>
                         </section>

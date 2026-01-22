@@ -15,7 +15,7 @@ export function Footer() {
               Transform images with natural language. Professional AI-powered editing.
             </p>
             <p className="text-xs text-muted-foreground">
-              <strong>Contact:</strong><br />
+              <strong>Support Email:</strong>{" "}
               <a href={SUPPORT_MAILTO} className="hover:text-foreground transition-colors">
                 {SUPPORT_EMAIL}
               </a>

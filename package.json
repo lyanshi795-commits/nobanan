@@ -8,9 +8,11 @@
     "dev:webpack": "next dev --experimental-webpack",
     "lint": "eslint .",
     "start": "next start",
+    "typecheck": "tsc --noEmit",
     "creem:e2e": "pnpm -s build && playwright test --reporter=list",
     "creem:e2e:ui": "pnpm -s build && playwright test --ui",
-    "creem:e2e:prod": "set PLAYWRIGHT_BASE_URL=https://nobanan.online && playwright test --reporter=list"
+    "creem:e2e:prod": "set PLAYWRIGHT_BASE_URL=https://nobanan.online && playwright test --reporter=list",
+    "audit:all": "pnpm lint && pnpm typecheck && pnpm build && pnpm creem:e2e && pnpm creem:e2e:prod"
   },
   "dependencies": {
     "@creem_io/nextjs": "^0.4.0",

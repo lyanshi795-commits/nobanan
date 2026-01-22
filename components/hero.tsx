@@ -75,8 +75,14 @@ export function Hero() {
             <Button size="lg" asChild className="h-12 px-8 text-base font-medium">
               <Link href="/dashboard">Generate</Link>
             </Button>
-            <Button size="lg" onClick={handleStartEditing} className="h-12 px-8 text-base font-medium" variant="secondary">
-              Start Editing
+            <Button size="lg" asChild className="h-12 px-8 text-base font-medium" variant="secondary">
+              <Link
+                href="/login?next=/dashboard"
+                data-testid="cta-start-editing"
+                aria-label="Start Editing"
+              >
+                Start Editing
+              </Link>
             </Button>
             <Button
               size="lg"

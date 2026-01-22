@@ -21,9 +21,12 @@ export default function ContactPage() {
                             <p className="text-sm text-muted-foreground mb-2">
                                 For general inquiries, billing, and technical support.
                             </p>
-                            <a href={SUPPORT_MAILTO} className="text-primary hover:underline font-medium">
-                                {SUPPORT_EMAIL}
-                            </a>
+                            <p className="font-medium">
+                                <strong>Support Email:</strong>{" "}
+                                <a href={SUPPORT_MAILTO} className="text-primary hover:underline">
+                                    {SUPPORT_EMAIL}
+                                </a>
+                            </p>
                         </div>
 
                         <div>

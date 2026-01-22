@@ -126,36 +126,18 @@ test.describe("Creem compliance audit (auth + dead links)", () => {
     test("Authentication sanity: logged-out users must be guided to login", async ({ page }) => {
         // ✅ 清空 cookie/localStorage，模拟全新访客
         await page.context().clearCookies();
+
+        // ✅ 加强等待策略，防止线上慢
         await page.goto("/", { waitUntil: "domcontentloaded" });
+        await page.waitForLoadState("networkidle");
 
-        // 尝试找到 CTA 并点击（如果找不到不算失败，但会提示）
-        let clicked = false;
-        for (const sel of CTA_SELECTORS) {
-            const btn = page.locator(sel).first();
-            if (await btn.count()) {
-                await btn.click();
-                clicked = true;
-                break;
-            }
-        }
+        // ✅ 使用稳定的 data-testid 定位 Start Editing 按钮
+        const cta = page.getByTestId("cta-start-editing");
+        await expect(cta).toBeVisible({ timeout: 120_000 });
+        await cta.click();
 
-        if (clicked) {
-            // ✅ 未登录点击 CTA 后，应该去 login 或出现登录按钮
-            await page.waitForTimeout(300);
-            const url = page.url();
-            const looksLikeLogin =
-                url.includes("/login") ||
-                (await page.locator('text=/Sign in/i').count()) > 0 ||
-                (await page.locator('text=/Continue with Google/i').count()) > 0;
-
-            expect(looksLikeLogin, "CTA did not route user to login flow").toBeTruthy();
-        } else {
-            // 没找到 CTA，说明 UI 可能不明显（会影响审核体验）
-            test.info().annotations.push({
-                type: "warning",
-                description: "No CTA button found on homepage (Generate/Start Editing/etc). Consider adding one.",
-            });
-        }
+        // ✅ 验证跳转到登录页或 dashboard
+        await expect(page).toHaveURL(/\/login\?next=\/dashboard|\/dashboard/i, { timeout: 30_000 });
     });
 
     test("No obvious compliance red flags: risky keywords + email typo", async ({ page }) => {

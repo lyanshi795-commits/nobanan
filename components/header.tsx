@@ -25,7 +25,9 @@ export function Header() {
 
           <div className="flex items-center gap-4">
             <Link
-              href="/login"
+              href="/login?next=/dashboard"
+              data-testid="cta-start-editing"
+              aria-label="Start Editing"
               className="font-medium hidden sm:inline-flex h-10 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 items-center justify-center"
             >
               Start Editing
