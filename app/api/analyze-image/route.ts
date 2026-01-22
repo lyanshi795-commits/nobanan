@@ -16,6 +16,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // @ts-ignore
     const result = await openrouter.chat.send({
       model: "google/gemini-3-pro-image-preview",
       messages: [
@@ -25,7 +26,7 @@ export async function POST(request: NextRequest) {
         }
       ],
       modalities: ["image", "text"]
-    })
+    } as any)
 
     const message = result.choices[0].message
 
