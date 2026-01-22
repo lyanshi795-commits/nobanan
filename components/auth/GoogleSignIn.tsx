@@ -10,6 +10,7 @@ export function GoogleSignIn() {
     const handleSignIn = async () => {
         if (!supabase) {
             console.error("Supabase not configured")
+            alert("Authentication service is not configured. Please contact support.")
             return
         }
         // Get the 'next' param from URL to redirect user after login
