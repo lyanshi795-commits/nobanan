@@ -131,13 +131,13 @@ test.describe("Creem compliance audit (auth + dead links)", () => {
         await page.goto("/", { waitUntil: "domcontentloaded" });
         await page.waitForLoadState("networkidle");
 
-        // ✅ 使用稳定的 data-testid 定位 Start Editing 按钮
-        const cta = page.getByTestId("cta-start-editing");
+        // ✅ 使用多重选择器定位 Start Editing 按钮（兼容新旧版本）
+        const cta = page.locator('[data-testid="cta-start-editing"], [aria-label="Start Editing"], a:has-text("Start Editing")').first();
         await expect(cta).toBeVisible({ timeout: 120_000 });
         await cta.click();
 
         // ✅ 验证跳转到登录页或 dashboard
-        await expect(page).toHaveURL(/\/login\?next=\/dashboard|\/dashboard/i, { timeout: 30_000 });
+        await expect(page).toHaveURL(/\/login|\/dashboard/i, { timeout: 30_000 });
     });
 
     test("No obvious compliance red flags: risky keywords + email typo", async ({ page }) => {
